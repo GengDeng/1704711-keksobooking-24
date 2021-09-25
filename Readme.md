@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг»
 
 * Студент: [Денис Годун](https://up.htmlacademy.ru/javascript/24/user/1704711).
-* Наставник: `Неизвестно`.
+* Наставник: [Геннадий Максимов](https://htmlacademy.ru/profile/gennadiy).
 
 ---
 

@@ -11,6 +11,6 @@ const getRandomFloat = (min,max,numberAfterPoint) => {
   const numberAfterFormula = Math.random() * (max - min + 1) + min;
   return numberAfterFormula.toFixed(numberAfterPoint);
 }
-(getRandomFloat(1,6,5);
+getRandomFloat(1,6,5);
 // выводит случайное число в диапазое от 1 до 6, с 5 знаками после запятой.
 

@@ -120,5 +120,3 @@ const offers = new Array(MAX_COUNT).fill('').map(() => (
 ));
 
 offers;
-
-console.log(getArray(FEATURES));

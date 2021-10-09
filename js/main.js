@@ -1,4 +1,5 @@
 const MAX_COUNT = 10;
+
 const AVATARS = [
   'img/avatars/user01.png',
   'img/avatars/user02.png',
@@ -11,11 +12,13 @@ const AVATARS = [
   'img/avatars/user09.png',
   'img/avatars/user10.png',
 ];
+
 const TITLES = [
   'Продаётся',
   'Сдаётся на длительный срок',
   'Сдаётся на сутки',
 ];
+
 const TYPES = [
   'palace',
   'flat',
@@ -23,7 +26,9 @@ const TYPES = [
   'bungalow',
   'hotel',
 ];
+
 const FEATURES = ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'];
+
 const DESCRIPTIONS = [
   'Уютная квартира в центре города',
   'Солидное помещение',
@@ -31,25 +36,34 @@ const DESCRIPTIONS = [
   'Можно с котом',
   'До вас тут жили цыгане',
 ];
+
 const PHOTOS = [
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg',
 ];
-const Price =  {
-  MIN: 2000,
-  MAX: 20000};
-const Room = {
-  MIN: 1,
-  MAX: 5};
-const Guest = {
-  MIN: 1,
-  MAX: 9};
+
 const CHECKS = [
   '12:00',
   '13:00',
   '14:00',
 ];
+
+const Price =  {
+  MIN: 2000,
+  MAX: 20000,
+};
+
+const Room = {
+  MIN: 1,
+  MAX: 5,
+};
+
+const Guest = {
+  MIN: 1,
+  MAX: 9,
+};
+
 const locationRange = {
   latMin: 35.65000,
   latMax: 35.70000,
@@ -58,29 +72,15 @@ const locationRange = {
   float: 5,
 };
 
-const getRandomInteger = (max, min = 0) => Math.floor(Math.random() * (max - min )) + min;
+const getRandomInteger = (max, min = 0) => Math.floor(Math.random() * (max - min)) + min;
 
-const getRandomFloat = (min,max,numberAfterPoint) => {
+const getRandomFloat = (min, max, numberAfterPoint) => {
   const numberAfterFormula = Math.random() * (max - min) + min;
 
   return numberAfterFormula.toFixed(numberAfterPoint);
 };
 
-function getArray(FEATURES) {
-  const maxLength = FEATURES.length;
-  const lengthOfArray = FEATURES.length - 1;
-  const array = [];
-
-  for(let i = 0; i < lengthOfArray; i++) {
-    const indexOfEl = getRandomInteger(maxLength);
-    const el = FEATURES[indexOfEl];
-
-    if (!array.includes(el)) {
-      array.push(el);
-    }
-  }
-  return array;
-}
+const getFeatures = (features) => features.slice(0, getRandomInteger(features.length));
 
 const getAuthor = () => (
   {
@@ -105,7 +105,7 @@ const getOffer = () => (
     guests: getRandomInteger(Guest.MIN,Guest.MAX),
     checkin: CHECKS[getRandomInteger(CHECKS.length - 1)],
     checkout: CHECKS[getRandomInteger(CHECKS.length - 1)],
-    features: getArray(FEATURES),
+    features: getFeatures(FEATURES),
     description: DESCRIPTIONS[getRandomInteger(DESCRIPTIONS.length - 1)],
     photos: PHOTOS[getRandomInteger(PHOTOS.length - 1)],
   }
